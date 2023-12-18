@@ -3,13 +3,13 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.header-space {
+header {
     height: 8rem;
     width: 100%;
     background-color: #000000;
 }
 
-.header {
+.header-content {
     margin: 0 10%;
     height: 8rem;
     display: flex;
@@ -57,3 +57,75 @@ body {
     color: #bebebe;
 }
 
+main {
+   
+}
+
+.about-me-space {
+    background-color: #eff7ff;
+}
+
+.about-me-content {
+    margin: 0 10%;
+    display: flex;
+}
+
+.about-me-text {
+    width: 50%;
+    padding: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about-me-h1 {
+    margin-top: 0;
+    padding-left: 2rem;
+}
+
+.about-me-p {
+    line-height: 2;
+}
+
+.about-me-media {
+    width: 50%;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-me-img {
+    height: 21rem;
+    width: 14rem;
+}
+
+.father-space {
+    background-color: #000000;
+}
+
+.father-content {
+    margin: 0 10%;
+    color: #ffffff;
+}
+
+.father-h2 {
+    margin-top: 0;
+    padding: 2rem;
+}
+
+.father-p {
+    line-height: 2;
+    width: 50%;
+}
+
+.health {
+
+}
+
+.music {
+
+}
+
+.art {
+
+}
