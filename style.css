@@ -184,10 +184,34 @@ header {
     width: 100%;
     padding: 2rem 0;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 2rem;
+}
+
+.health-swiper {
+    width: 21rem;
+    height: 21rem;
+}
+
+.health-swiper-wrapper {
+
+}
+
+.health-swiper-slide {
+
+}
+
+.health-swiper-pagination {
+
+}
+
+.health-swiper-button-prev {
+
+}
+
+.health-swiper-button-next {
+
 }
 
 .health-img-1 {
@@ -249,7 +273,7 @@ header {
     justify-content: center;
 }
 
-.music-img {
+.music-vid {
     height: 14rem;
     width: 24rem;
 }
@@ -321,6 +345,12 @@ header {
     height: 20rem;
     width: 15rem;
 }
+
+/* Projects */
+
+/* Skills */
+
+/* Contact */
 
 /* Footer */
 
