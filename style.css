@@ -1,12 +1,22 @@
+/* General */
+
 body {
     margin: 0;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
+/* Header */
+
 header {
     height: 8rem;
     width: 100%;
     background-color: #000000;
+    position: fixed;
+    top: 0;
 }
 
 .header-content {
@@ -27,7 +37,7 @@ header {
     height: 7rem;
     width: 6rem;
     display: inline;
-    margin: 0 2rem;
+    margin: 0 2rem 0 0;
     border-radius: 50%;
 }
 
@@ -57,16 +67,14 @@ header {
     color: #bebebe;
 }
 
-main {
-   
-}
+/* About Me */
 
 .about-me-space {
     background-color: #eff7ff;
 }
 
 .about-me-content {
-    margin: 0 10%;
+    margin: 8rem 10% 0 10%;
     display: flex;
 }
 
@@ -78,7 +86,7 @@ main {
 }
 
 .about-me-h1 {
-    margin-top: 0;
+    margin: 0;
     padding-left: 2rem;
 }
 
@@ -99,33 +107,246 @@ main {
     width: 14rem;
 }
 
+/* Father */
+
 .father-space {
-    background-color: #000000;
+    background-color: #deefff;
 }
 
 .father-content {
     margin: 0 10%;
-    color: #ffffff;
+    display: flex;
+}
+
+.father-media {
+    width: 50%;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.father-img {
+    height: 21rem;
+    width: 14rem;
+}
+
+.father-text {
+    width: 50%;
+    padding: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .father-h2 {
-    margin-top: 0;
-    padding: 2rem;
+    margin: 0;
+    padding-left: 2rem;
 }
 
 .father-p {
     line-height: 2;
+}
+
+/* Health */
+
+.health-space {
+    background-color: #eff7ff
+}
+
+.health-content {
+    margin: 0 10%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.health-text {
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.health-h2 {
+    margin: 0;
+    padding-left: 2rem;
+}
+
+.health-p-1 {
+    line-height: 2;
+}
+
+.health-p-2 {
+    margin-top: 0;
+    line-height: 2;
+}
+
+.health-media {
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.health-img-1 {
+    height: 21rem;
+    width: 14rem;
+}
+
+.health-img-2 {
+    height: 14rem;
+    width: 21rem;
+}
+
+.health-img-3 {
+    height: 14rem;
+    width: 21rem;
+}
+
+.health-img-4 {
+    height: 14rem;
+    width: 21rem;
+}
+
+.health-img-5 {
+    height: 14rem;
+    width: 30.25rem;
+}
+
+.health-img-6 {
+    height: 14rem;
+    width: 21rem;
+}
+
+.health-img-7 {
+    height: 21rem;
+    width: 14rem;
+}
+
+.health-img-8 {
+    height: 21rem;
+    width: 14rem;
+}
+
+/* Music */
+
+.music-space {
+    background-color: #deefff;
+}
+
+.music-content {
+    margin: 0 10%;
+    display: flex;
+}
+
+.music-media {
     width: 50%;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.health {
-
+.music-img {
+    height: 14rem;
+    width: 24rem;
 }
 
-.music {
-
+.music-text {
+    width: 50%;
+    padding: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.art {
+.music-h2 {
+    padding-left: 2rem;
+    margin: 0;
+}
 
+.music-p {
+    line-height: 2;
+}
+
+/* Art */
+
+.art-space {
+    background-color: #eff7ff
+}
+
+.art-content {
+    margin: 0 10%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.art-text {
+    width: 100%;
+    padding: 2rem 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.art-h2 {
+    margin: 0;
+    padding-left: 2rem;
+}
+
+.art-p {
+    line-height: 2;
+}
+
+.art-media {
+    width: 100%;
+    padding: 0 0 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.art-img-1 {
+    height: 20rem;
+    width: 15rem;
+}
+
+.art-img-2 {
+    height: 20rem;
+    width: 15rem;
+}
+
+.art-img-3 {
+    height: 20rem;
+    width: 15rem;
+}
+
+/* Footer */
+
+.footer-space {
+    background-color: #000000;
+}
+
+.footer-content {
+    margin: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-contact {
+    width: 25%;
+    padding: 2rem 0;
+}
+
+.footer-h2 {
+    color: #ffffff;
+    border-bottom: thin solid #ffffff;
+    text-align: center;
+}
+
+.footer-p {
+    color: #ffffff;
+    text-align: center;
 }
