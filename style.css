@@ -17,6 +17,7 @@ header {
     background-color: #000000;
     position: fixed;
     top: 0;
+    z-index: 100;
 }
 
 .header-content {
@@ -189,12 +190,16 @@ header {
     justify-content: center;
 }
 
+.health-slider-wrapper {
+    width: 80%;
+}
+
 .health-img-list {
     display: flex;
-    gap: 2rem;
     justify-items: center;
     align-items: center;
     overflow-x: auto;
+    gap: 2rem;
     margin-bottom: 0.5rem;
 }
 
@@ -223,7 +228,7 @@ header {
 
 .health-scrollbar {
     height: 2rem;
-    width: 100%;
+    width: 80%;
     background-color: #eff7ff;
     display: flex;
     align-items: center;
@@ -245,10 +250,14 @@ header {
 .health-scrollbar-thumb {
     position: absolute;
     height: 100%;
-    width: 50%;
+    width: 37.5%;
     background-color: #000000;
     cursor: grab;
     border-radius: inherit;
+}
+
+.health-scrollbar-thumb:active {
+    cursor: grabbing;
 }
 
 .health-scrollbar-thumb::after {
@@ -279,9 +288,50 @@ header {
     justify-content: center;
 }
 
-.music-vid {
+.music-slide-button {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: #deefff;
+    border: none;
+    color: #bebebe;
+}
+
+.music-slide-button:active {
+    color: #000000;
+}
+
+#prev-slide {
+    
+}
+
+#next-slide {
+    
+}
+
+.music-slider-wrapper {
     height: 14rem;
     width: 24rem;
+    padding-left: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.music-vid-list {
+    height: 14rem;
+    width: 24rem;
+    overflow: hidden;
+}
+
+.music-vid-list::-webkit-scrollbar {
+    display: none;
+    scrollbar-width: none;
+}
+
+.music-vid {
+    height: 100%;
+    width: 100%;
 }
 
 .music-text {
@@ -303,7 +353,7 @@ header {
 /* Art */
 
 .art-space {
-    background-color: #eff7ff
+    background-color: #eff7ff;
 }
 
 .art-content {
@@ -334,6 +384,31 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.art-slide-button {
+    height: 2rem;
+    width: 2rem;
+    background-color: #eff7ff;
+    color: #bebebe;
+    border: none;
+    border-radius: 50%;
+}
+
+.art-slide-button:active {
+    color: #000000;
+}
+
+.art-slider-wrapper {
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0.25rem;
+}
+
+.art-img-list {
+    display: flex;
     gap: 2rem;
 }
 
@@ -351,12 +426,6 @@ header {
     height: 20rem;
     width: 15rem;
 }
-
-/* Projects */
-
-/* Skills */
-
-/* Contact */
 
 /* Footer */
 
@@ -386,3 +455,9 @@ header {
     color: #ffffff;
     text-align: center;
 }
+
+/* Projects */
+
+/* Skills */
+
+/* Contact */

@@ -11,7 +11,9 @@ deploy using GitHub Pages (buy domain name??)
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>About Me - Ethan Aldridge Portfolio</title>
 		<link rel="stylesheet" href="style.css" />
-		<link rel="stylesheet" href="script.js" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<script src="script.js"></script>
 	</head>
 
 	<body>
@@ -85,7 +87,18 @@ deploy using GitHub Pages (buy domain name??)
 				<div class="music-space">
 					<div class="music-content">
 						<div class="music-media">
-							<iframe width="560" height="315" src="https://www.youtube.com/embed/QcHNrzwYf-c?si=nh04y6Akd9Mp3soz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="music-vid"></iframe>
+							<button id="prev-slide" class="music-slide-button material-symbols-outlined">chevron_left</button>
+							<div class="music-slider-wrapper">
+								<div class="music-vid-list">
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/QcHNrzwYf-c?si=nh04y6Akd9Mp3soz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="music-vid"></iframe>
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/Fwql7kwP1_M?si=vZZMFwAEkTT0YFFo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="music-vid"></iframe>
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/bkiGzvUNPTk?si=fdV9i9XabJYisJwJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="music-vid"></iframe>
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/sQWnjg2UvrE?si=dZyicyRlzju24GWN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="music-vid"></iframe>
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/AF2mKRm82Q0?si=nipQxgrgP1U4_DJF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="music-vid"></iframe>
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/qv9dx8tRo-Y?si=m3hFAP8M4DMPA3Rh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="music-vid"></iframe>
+								</div>
+							</div>
+							<button id="next-slide" class="music-slide-button material-symbols-outlined">chevron_right</button>
 						</div>
 						<div class="music-text">
 							<h2 class="music-h2">Music</h2>
@@ -100,9 +113,15 @@ deploy using GitHub Pages (buy domain name??)
 							<p class="art-p">&emsp;&emsp;According to my parents, as soon as I could hold a crayon, I was always drawing. Eventually, at about the age of 14 my inner perfectionist got the best of me, and I had to put it down. I would stare at a blank piece of paper, not knowing what to draw. The creative reservoir dried up, so to speak. In retrospect, letting go of drawing (and video games) created the space that allowed me to learn to play the guitar, and to get into strength training. For anyone who is a creative type fighting the boredom to create, I would recommend exploring other outlets. Coding is my newest outlet, and it's bringing me a lot of enjoyment. Frustration, too... but I think it's a net positive :) Here are some examples of the kinds of things I would draw (I think I was 15 for the tree):</p>
 						</div>
 						<div class="art-media">
-							<img src="C:/Software/Projects/Personal Portfolio Website/Images/flower drawing.jpg" alt="Ethan's drawing of some flowers" class="art-img-1">
-							<img src="C:/Software/Projects/Personal Portfolio Website/Images/tree drawing.jpg" alt="Ethan's drawing of a tree" class="art-img-2">
-							<img src="C:/Software/Projects/Personal Portfolio Website/Images/roses drawing.jpg" alt="Ethan's drawing of some roses" class="art-img-3">
+							<button id="prev-slide" class="art-slide-button material-symbols-outlined">chevron_left</button>
+							<div class="art-slider-wrapper">
+								<div class="art-img-list">
+									<img src="C:/Software/Projects/Personal Portfolio Website/Images/flower drawing.jpg" alt="Ethan's drawing of some flowers" class="art-img-1">
+									<img src="C:/Software/Projects/Personal Portfolio Website/Images/tree drawing.jpg" alt="Ethan's drawing of a tree" class="art-img-2">
+									<img src="C:/Software/Projects/Personal Portfolio Website/Images/roses drawing.jpg" alt="Ethan's drawing of some roses" class="art-img-3">
+								</div>
+							</div>
+							<button id="next-slide" class="art-slide-button material-symbols-outlined">chevron_right</button>
 						</div>
 					</div>
 				</div>
