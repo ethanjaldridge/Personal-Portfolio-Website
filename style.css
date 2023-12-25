@@ -227,7 +227,7 @@ header {
 }
 
 .health-scrollbar {
-    height: 2rem;
+    height: 4rem;
     width: 80%;
     background-color: #eff7ff;
     display: flex;
@@ -301,14 +301,6 @@ header {
     color: #000000;
 }
 
-#prev-slide {
-    
-}
-
-#next-slide {
-    
-}
-
 .music-slider-wrapper {
     height: 14rem;
     width: 24rem;
@@ -326,7 +318,6 @@ header {
 
 .music-vid-list::-webkit-scrollbar {
     display: none;
-    scrollbar-width: none;
 }
 
 .music-vid {
@@ -401,6 +392,7 @@ header {
 
 .art-slider-wrapper {
     height: 20rem;
+    width: 69.7%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -410,19 +402,22 @@ header {
 .art-img-list {
     display: flex;
     gap: 2rem;
+    overflow-x: auto;
 }
 
-.art-img-1 {
-    height: 20rem;
-    width: 15rem;
+.art-img-list::before {
+    content: "";
 }
 
-.art-img-2 {
-    height: 20rem;
-    width: 15rem;
+.art-img-list::after {
+    content: "";
 }
 
-.art-img-3 {
+.art-img-list::-webkit-scrollbar {
+    display: none;
+}
+
+.art-img {
     height: 20rem;
     width: 15rem;
 }
