@@ -49,6 +49,30 @@ const initSlider3 = () => {
             imgList.scrollBy({ left: scrollAmount, behavior: "smooth" });
         });
     });
+
+    const firstImgClone = imgList.firstElementChild.cloneNode(true);
+    const lastImgClone = imgList.lastElementChild.cloneNode(true);
+    imgList.appendChild(firstImgClone);
+    imgList.insertBefore(lastImgClone, imgList.firstElementChild);
+
+    const handleButtonClick = (direction) => {
+        const imgWidth = (imgList.clientWidth - gapWidth) / 3;
+        const scrollAmount = (imgWidth + gapWidth) * 3 * direction;
+        imgList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+
+        if (direction === 1 && imgList.scrollLeft + imgList.clientWidth >= imgList.scrollWidth) {
+            imgList.scrollTo({ left: 0, behavior: "smooth" });
+        } else if (direction === -1 && imgList.scrollLeft <= 0) {
+            imgList.scrollTo({ left: imgList.scrollWidth - imgList.clientWidth, behavior: "smooth" });
+        }
+    };
+
+    artSlideButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const direction = button.id === "art-prev-slide" ? -1 : 1;
+            handleButtonClick(direction);
+        });
+    });
 };
 
 window.addEventListener("load", initSlider1);
