@@ -392,10 +392,11 @@ header {
 
 .art-slider-wrapper {
     height: 20rem;
-    width: 69.7%;
+    width: 51rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-right: 2rem;
     padding-left: 0.25rem;
 }
 
@@ -406,10 +407,6 @@ header {
 }
 
 .art-img-list::before {
-    content: "";
-}
-
-.art-img-list::after {
     content: "";
 }
 
