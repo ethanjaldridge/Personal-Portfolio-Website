@@ -51,10 +51,8 @@ const initSlider3 = () => {
         });
     });
 
-    const firstImgClone = imgList.firstElementChild.cloneNode(true);
-    const lastImgClone = imgList.lastElementChild.cloneNode(true);
-    imgList.appendChild(firstImgClone);
-    imgList.insertBefore(lastImgClone, imgList.firstElementChild);
+    const lastThreeImages = Array.from(imgList.children).slice(-3).map(img => img.cloneNode(true));
+    lastThreeImages.reverse().forEach(img => imgList.insertBefore(img, imgList.firstElementChild));
 
     const handleButtonClick = (direction) => {
         const imgWidth = (imgList.clientWidth - gapWidth) / 3;
@@ -63,9 +61,15 @@ const initSlider3 = () => {
 
         if (direction === 1 && imgList.scrollLeft + imgList.clientWidth >= imgList.scrollWidth) {
             imgList.scrollTo({ left: 0, behavior: "smooth" });
+            setTimeout(() => {
+                imgList.scrollTo({ left: 0, behavior: "smooth" });
+            }, 50);
         } else if (direction === -1 && imgList.scrollLeft <= 0) {
             imgList.scrollTo({ left: imgList.scrollWidth - imgList.clientWidth, behavior: "smooth" });
-        }
+            setTimeout(() => {
+                imgList.scrollTo({ left: imgList.scrollWidth - imgList.clientWidth, behavior: "smooth" });
+            }, 50);
+        };
     };
 
     artSlideButtons.forEach(button => {
