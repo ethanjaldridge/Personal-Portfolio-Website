@@ -41,6 +41,7 @@ const initSlider1 = () => {
 const initSlider3 = () => {
     const imgList = document.querySelector(".art-img-list");
     const artSlideButtons = document.querySelectorAll(".art-slide-button");
+    const gapWidth = 32;
     
     artSlideButtons.forEach(button => {
         button.addEventListener("click", () => {
