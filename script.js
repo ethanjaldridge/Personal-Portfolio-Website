@@ -30,10 +30,41 @@ const initSlider1 = () => {
         document.addEventListener("mousemove", handleMouseMove);
         document.addEventListener("mouseup", handleMouseUp);
     });
+
+    const updateScrollbar = (clickX) => {
+        const trackRect = healthScrollTrack.getBoundingClientRect();
+        const thumbWidth = healthScrollThumb.offsetWidth;
+        const maxThumbPosition = trackRect.width - thumbWidth;
+        
+        const newThumbPosition = Math.max(0, Math.min(maxThumbPosition, clickX - trackRect.left - thumbWidth / 2));
+        const scrollPosition = (newThumbPosition / maxThumbPosition) * maxScrollLeft;
+
+        healthScrollThumb.style.left = `${newThumbPosition}px`;
+        imgList.scrollLeft = scrollPosition;
+    };
+
+    healthScrollTrack.addEventListener("mousedown", (e) => {
+        updateScrollbar(e.clientX);
+
+        const handleMouseMove = (e) => {
+            updateScrollbar(e.clientX);
+        };
+
+        const handleMouseUp = () => {
+            document.removeEventListener("mousemove", handleMouseMove);
+            document.removeEventListener("mouseup", handleMouseUp);
+        };
+
+        document.addEventListener("mousemove", handleMouseMove);
+        document.addEventListener("mouseup", handleMouseUp);
+    });
 };
 
 /* Music Video Slider */
 
+const initSlider2 = () => {
+
+};
 
 
 /* Art Image Slider */
@@ -41,7 +72,10 @@ const initSlider1 = () => {
 const initSlider3 = () => {
     const imgList = document.querySelector(".art-img-list");
     const artSlideButtons = document.querySelectorAll(".art-slide-button");
-    const gapWidth = 32;
+    const imgListChildren = [...imgList.children];
+    const imgWidth = imgList.querySelector(".art-img").offsetWidth;
+
+    let imgPerView = Math.round(imgList.offsetWidth / imgWidth)
     
     artSlideButtons.forEach(button => {
         button.addEventListener("click", () => {
@@ -50,35 +84,30 @@ const initSlider3 = () => {
             imgList.scrollBy({ left: scrollAmount, behavior: "smooth" });
         });
     });
+  
+    imgListChildren.slice(-imgPerView).reverse().forEach(img => {
+        imgList.insertAdjacentHTML("afterbegin", img.outerHTML);
+    });
 
-    const lastThreeImages = Array.from(imgList.children).slice(-3).map(img => img.cloneNode(true));
-    lastThreeImages.reverse().forEach(img => imgList.insertBefore(img, imgList.firstElementChild));
+    imgListChildren.slice(0, imgPerView).forEach(img => {
+        imgList.insertAdjacentHTML("beforeend", img.outerHTML);
+    });
 
-    const handleButtonClick = (direction) => {
-        const imgWidth = (imgList.clientWidth - gapWidth) / 3;
-        const scrollAmount = (imgWidth + gapWidth) * 3 * direction;
-        imgList.scrollBy({ left: scrollAmount, behavior: "smooth" });
-
-        if (direction === 1 && imgList.scrollLeft + imgList.clientWidth >= imgList.scrollWidth) {
-            imgList.scrollTo({ left: 0, behavior: "smooth" });
-            setTimeout(() => {
-                imgList.scrollTo({ left: 0, behavior: "smooth" });
-            }, 50);
-        } else if (direction === -1 && imgList.scrollLeft <= 0) {
-            imgList.scrollTo({ left: imgList.scrollWidth - imgList.clientWidth, behavior: "smooth" });
-            setTimeout(() => {
-                imgList.scrollTo({ left: imgList.scrollWidth - imgList.clientWidth, behavior: "smooth" });
-            }, 50);
-        };
+    const infiniteScroll = () => {
+        if (imgList.scrollLeft === 0) {
+            imgList.classList.add("no-transition");
+            imgList.scrollLeft = imgList.scrollWidth - (2 * imgList.offsetWidth);
+            imgList.classList.remove("no-transition");
+        } else if (imgList.scrollLeft === imgList.scrollWidth - imgList.offsetWidth) {
+            imgList.classList.add("no-transition");
+            imgList.scrollLeft = imgList.offsetWidth;
+            imgList.classList.remove("no-transition");
+        }
     };
 
-    artSlideButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            const direction = button.id === "art-prev-slide" ? -1 : 1;
-            handleButtonClick(direction);
-        });
-    });
+    imgList.addEventListener("scroll", infiniteScroll);
 };
 
 window.addEventListener("load", initSlider1);
+window.addEventListener("load", initSlider2);
 window.addEventListener("load", initSlider3);

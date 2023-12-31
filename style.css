@@ -245,6 +245,20 @@ header {
 
 .health-scrollbar-track:hover {
     height: 0.25rem;
+    cursor: grab;
+}
+
+.health-scrollbar-track::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -0.5rem;
+    bottom: -0.75rem;
+}
+
+.health-scrollbar-track:active {
+    cursor: grabbing;
 }
 
 .health-scrollbar-thumb {
@@ -254,19 +268,6 @@ header {
     background-color: #000000;
     cursor: grab;
     border-radius: inherit;
-}
-
-.health-scrollbar-thumb:active {
-    cursor: grabbing;
-}
-
-.health-scrollbar-thumb::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -0.5rem;
-    bottom: -0.5rem;
 }
 
 /* Music */
@@ -412,6 +413,10 @@ header {
 
 .art-img-list::-webkit-scrollbar {
     display: none;
+}
+
+.art-img-list.no-transition {
+    scroll-behavior: auto;
 }
 
 .art-img {
