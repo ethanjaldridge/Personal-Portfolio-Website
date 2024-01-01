@@ -9,6 +9,10 @@ a:hover {
     text-decoration: none;
 }
 
+p {
+    line-height: 2;
+}
+
 /* Header */
 
 header {
@@ -81,7 +85,7 @@ header {
 
 .about-me-text {
     width: 50%;
-    padding: 2rem 0;
+    padding: 4rem 0;
     display: flex;
     flex-wrap: wrap;
 }
@@ -89,10 +93,6 @@ header {
 .about-me-h1 {
     margin: 0;
     padding-left: 2rem;
-}
-
-.about-me-p {
-    line-height: 2;
 }
 
 .about-me-media {
@@ -144,10 +144,6 @@ header {
     padding-left: 2rem;
 }
 
-.father-p {
-    line-height: 2;
-}
-
 /* Health */
 
 .health-space {
@@ -172,13 +168,8 @@ header {
     padding-left: 2rem;
 }
 
-.health-p-1 {
-    line-height: 2;
-}
-
 .health-p-2 {
     margin: 0;
-    line-height: 2;
 }
 
 .health-media {
@@ -338,10 +329,6 @@ header {
     margin: 0;
 }
 
-.music-p {
-    line-height: 2;
-}
-
 /* Art */
 
 .art-space {
@@ -364,10 +351,6 @@ header {
 .art-h2 {
     margin: 0;
     padding-left: 2rem;
-}
-
-.art-p {
-    line-height: 2;
 }
 
 .art-media {
@@ -432,29 +415,157 @@ header {
 
 .footer-content {
     margin: 0 10%;
+    height: 8rem;
     display: flex;
+    justify-content: end;
     align-items: center;
-    justify-content: center;
-}
-
-.footer-contact {
-    width: 25%;
-    padding: 2rem 0;
-}
-
-.footer-h2 {
     color: #ffffff;
-    border-bottom: thin solid #ffffff;
-    text-align: center;
 }
 
-.footer-p {
-    color: #ffffff;
-    text-align: center;
+.github-logo {
+    height: 1.6rem;
+    width: 1.6rem;
+}
+
+.instagram-logo {
+    height: 2.15rem;
+    width: 2.15rem;
+    margin-left: 0.75rem;
+}
+
+.youtube-logo {
+    height: 2.25rem;
+    width: 2.25rem;
+    margin-left: 0.6rem;
+}
+
+.email-logo {
+    height: 2.75rem;
+    width: 2.75rem;
+    margin-left: 0.5rem;   
 }
 
 /* Projects */
 
+.projects-space {
+    background-color: #eff7ff;
+}
+
+.projects-content {
+    margin: 8rem 10% 0 10%;
+}
+
+.projects-text {
+    width: 50%;
+    padding: 4rem 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.projects-h1 {
+    margin: 0;
+    padding-left: 2rem;
+    width: 100%;
+}
+
+.projects-p {
+    width: 100%;
+}
+
 /* Skills */
 
+.skills-space {
+    background-color: #eff7ff;
+}
+
+.skills-content {
+    margin: 8rem 10% 0 10%;
+}
+
+.skills-text {
+    width: 50%;
+    padding: 4rem 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills-h1 {
+    margin: 0;
+    padding-left: 2rem;
+    width: 100%;
+}
+
+.skills-p {
+    width: 100%;
+}
+
 /* Contact */
+
+.contact-space {
+    background-color: #eff7ff;
+}
+
+.contact-content {
+    margin: 8rem 10% 0 10%;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact-h1 {
+    margin: 0;
+    width: 100%;
+}
+
+.contact-body {
+    display: flex;
+}
+
+.contact-form-container {
+    width: 50%;
+    padding-top: 1.1rem;
+}
+
+.contact-form-item {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact-form-label {
+    font-weight: bold;
+    width: 87.5%;
+    padding-bottom: 0.5rem;
+}
+
+.contact-form-field {
+    width: 87.5%;
+    border-radius: 0.5rem;
+}
+
+.submit-button {
+    border-radius: 1rem;
+    background-color: #eff7ff;
+}
+
+.submit-button:hover {
+    cursor: pointer;
+}
+
+.contact-img-container {   
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-img {
+    height: 16.5rem;
+    width: 25rem;
+}
+
+/* @media */
+
+@media only screen and (max-width: 900px) {
+    /* fix header nav */ 
+}
