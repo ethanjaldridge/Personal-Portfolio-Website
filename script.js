@@ -63,7 +63,42 @@ const initSlider1 = () => {
 /* Music Video Slider */
 
 const initSlider2 = () => {
+    const vidList = document.querySelector(".music-vid-list");
+    const musicSlideButtons = document.querySelectorAll(".music-slide-button");
+    const vidListChildren = [...vidList.children];
+    const vidWidth = vidList.querySelector(".music-vid").offsetWidth;
 
+    let vidPerView = Math.round(vidList.offsetWidth / vidWidth)
+    
+    musicSlideButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const direction = button.id === "music-prev-slide" ? -1 : 1;
+            const scrollAmount = vidList.clientWidth * direction;
+            vidList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        });
+    });
+  
+    vidListChildren.slice(-vidPerView).reverse().forEach(vid => {
+        vidList.insertAdjacentHTML("afterbegin", vid.outerHTML);
+    });
+
+    vidListChildren.slice(0, vidPerView).forEach(vid => {
+        vidList.insertAdjacentHTML("beforeend", vid.outerHTML);
+    });
+
+    const infiniteScroll = () => {
+        if (vidList.scrollLeft === 0) {
+            vidList.classList.add("no-transition");
+            vidList.scrollLeft = vidList.scrollWidth - (2 * vidList.offsetWidth);
+            vidList.classList.remove("no-transition");
+        } else if (vidList.scrollLeft === vidList.scrollWidth - vidList.offsetWidth) {
+            vidList.classList.add("no-transition");
+            vidList.scrollLeft = vidList.offsetWidth;
+            vidList.classList.remove("no-transition");
+        }
+    };
+
+    vidList.addEventListener("scroll", infiniteScroll);
 };
 
 
