@@ -427,7 +427,7 @@ header {
     margin: 0 10%;
     height: 8rem;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     color: #ffffff;
 }
