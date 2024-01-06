@@ -45,19 +45,16 @@ header {
 .header-logo {
     height: 7rem;
     width: 6rem;
-    display: inline;
     margin: 0 2rem 0 0;
     border-radius: 50%;
 }
 
 .header-name {
-    display: inline;
     color: #ffffff;
 }
 
 .header-subname {
     color:#bebebe;
-    display: inline;
     margin-left: 0.75rem;
 }
 
@@ -85,6 +82,7 @@ header {
 .about-me-content {
     margin: 8rem 10% 0 10%;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .about-me-text {
@@ -274,6 +272,8 @@ header {
 .music-content {
     margin: 0 10%;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .music-media {
@@ -301,10 +301,13 @@ header {
     color: #000000;
 }
 
+#music-prev-slide {
+    margin-right: 0.25rem;
+}
+
 .music-slider-wrapper {
     height: 14rem;
     width: 24rem;
-    padding-left: 0.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -313,7 +316,10 @@ header {
 .music-vid-list {
     height: 100%;
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template: 100% / repeat(8, 24rem);
+    justify-items: center;
+    align-items: center;
     overflow-x: hidden;
 }
 
@@ -324,7 +330,6 @@ header {
 .music-vid {
     height: 100%;
     width: 100%;
-    flex-shrink: 0;
 }
 
 .music-text {
@@ -349,11 +354,13 @@ header {
     margin: 0 10%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .art-text {
     width: 100%;
-    padding: 2rem 0 0 0;
+    padding: 2rem 0 0.5rem 0;
     display: flex;
     flex-wrap: wrap;
 }
@@ -388,24 +395,25 @@ header {
     color: #000000;
 }
 
+#art-prev-slide {
+    padding-right: 0.25rem;
+}
+
 .art-slider-wrapper {
     height: 20rem;
     width: 51rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding-right: 2rem;
-    padding-left: 0.5rem;
 }
 
 .art-img-list {
     display: flex;
     gap: 2rem;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 .art-img-list::before {
     content: "";
+    width: none;
 }
 
 .art-img-list::-webkit-scrollbar {
@@ -467,7 +475,7 @@ header {
 
 .projects-content {
     margin: 8rem 10% 0 10%;
-    padding: 4rem 2rem;
+    padding: 4rem 2rem 5rem 2rem;
     display: flex;
     flex-wrap: wrap;
 }
@@ -500,7 +508,6 @@ header {
 }
 
 .project-media {
-    height: 100%;
     width: 50%;
     display: flex;
     justify-content: center;
@@ -508,8 +515,8 @@ header {
 }
 
 .project-img {
-    height: 100%;
-    width: 24rem;
+    max-height: 14rem;
+    max-width: 24rem;
 }
 
 .workout-advice-generator-body {
@@ -634,9 +641,11 @@ header {
 }
 
 .contact-img {
-    height: 16.5rem;
-    width: 25rem;
+    height: 18rem;
+    width: 27rem;
 }
+
+
 
 /* @media */
 
@@ -648,10 +657,23 @@ header {
     }
 }
 
+/* Font Change by Device */
+
+@media only screen and (max-width: 800px) {
+    html, body {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    html, body {
+        font-size: 12px;
+    }
+}
+
 /* Hamburger Menu */
 
 @media only screen and (max-width: 999px) {
-    
     .header-nav {
         display: none;
     } 
@@ -673,10 +695,10 @@ header {
     .menu-wrap .toggler {
         position: absolute;
         top: 1rem;
-        right: 0.15rem;
+        right: 0;
         z-index: 2;
         cursor: pointer;
-        width: 4.5rem;
+        width: 3.5rem;
         height: 3.5rem;
         opacity: 0;
     }
@@ -686,7 +708,7 @@ header {
         top: 0;
         right: 0;
         z-index: 1;
-        width: 3rem;
+        width: 2rem;
         height: 4rem;
         padding: 1rem;
         background: var(--overlay-color);
@@ -775,6 +797,10 @@ header {
         transition: 200ms ease;
     }
 
+    .menu-wrap .menu > div > div > ul {
+        padding: 0;
+    }
+
     .menu-wrap .menu > div > div > ul > li {
         list-style: none;
         color: #ffffff;
@@ -790,23 +816,129 @@ header {
 
 }
 
-/* Remove Portfolio from Header */
+/* Header Reorder */
 
 @media only screen and (max-width: 619px) {
     .header-subname {
         display: none;
     }
+
+    .project-name {
+        padding-left: 0;
+    }
 }
 
-/* Contact Page Reorder */
-
-@media only screen and (max-width: 999px) {
-    .contact-form-container {
-        width: 100%;
+@media only screen and (max-width: 455px) {
+    .header-name {
+        width: 4rem;
+        font-size: 1.45rem;
     }
 
-    .contact-img-container {
+    .header-logo {
+        height: 6rem;
+        width: 5.14rem;
+        margin-right: 1rem;
+    }
+}
+
+/* About Me Page Reorder */
+
+@media only screen and (max-width: 800px) {
+    .about-me-text {
         width: 100%;
+        padding-bottom: 0.5rem;
+    }
+
+    .about-me-media {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .father-content {
+        flex-wrap: wrap-reverse;
+    }
+
+    .father-media {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .father-text {
+        width: 100%;
+        padding-bottom: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .music-content {
+        flex-wrap: wrap-reverse;
+    }
+
+    .music-media {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .music-text {
+        width: 100%;
+        padding-bottom: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .music-slider-wrapper {
+        width: 18rem;
+    }
+
+    .music-vid-list {
+        grid-template: 100% / repeat(8, 18rem);
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .music-slider-wrapper {
+        height: 10rem;
+        width: 15rem;
+    }
+
+    .music-vid-list {
+        grid-template: 100% / repeat(8, 15rem);
+    }
+}
+
+@media only screen and (max-width: 1159px) {
+    .art-slider-wrapper {
+        width: 34rem;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .art-slider-wrapper {
+        width: 17rem;
+    }
+}
+
+@media only screen and (max-width: 455px) {
+    .art-slider-wrapper {
+        height: 18rem;
+        width: 15.5rem;
+    }
+
+    .art-img {
+        height: 18rem;
+        width: 13.5rem;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .art-slider-wrapper {
+        height: 16rem;
+        width: 14rem;
+    }
+
+    .art-img {
+        height: 16rem;
+        width: 12rem;
     }
 }
 
@@ -815,13 +947,42 @@ header {
 @media only screen and (max-width: 1150px) {
     .project-text {
         width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Contact Page Reorder */
+
+@media only screen and (max-width: 999px) {
+    .contact-form-container {
+        width: 100%;
+        margin-bottom: 0.5rem;
     }
 
-    .project-media {
+    .contact-img-container {
         width: 100%;
     }
+}
 
-    .project-text {
-        margin-bottom: 2rem;
+@media only screen and (max-width: 500px) {
+    .contact-h1 {
+        text-align: center;
+    }
+
+    .contact-form-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact-form-item, .contact-form-item, .contact-form-name-field, .contact-form-message-field {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 465px) {
+    .contact-img {
+        height: 14rem;
+        width: 21rem;
     }
 }
