@@ -13,6 +13,10 @@ p {
     line-height: 2;
 }
 
+.menu-wrap {
+    display: none;
+}
+
 /* Header */
 
 header {
@@ -602,7 +606,7 @@ header {
 }
 
 .contact-form-name-field {
-    width: 43.75%;
+    width: 65%;
     border-radius: 0.5rem;
 }
 
@@ -634,6 +638,172 @@ header {
 
 /* @media */
 
-@media only screen and (max-width: 900px) {
-    /* fix header nav */ 
+/* Taller Screens */
+
+@media only screen and (min-height: 750px) {
+    .contact-content {
+        height: 55.55555vh;
+    }
+}
+
+/* Hamburger Menu */
+
+@media only screen and (max-width: 999px) {
+    
+    .header-nav {
+        display: none;
+    } 
+
+    :root {
+        --primary-color: #ffffff;
+        --overlay-color: #000000;
+        --menu-speed: 200ms;
+    }
+
+    .menu-wrap {
+        display: inline-block;
+        position: fixed;
+        top: 1rem;
+        right: 10%;
+        z-index: 1;
+    }
+
+    .menu-wrap .toggler {
+        position: absolute;
+        top: 1rem;
+        right: 0.15rem;
+        z-index: 2;
+        cursor: pointer;
+        width: 4.5rem;
+        height: 3.5rem;
+        opacity: 0;
+    }
+
+    .menu-wrap .hamburger {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        width: 3rem;
+        height: 4rem;
+        padding: 1rem;
+        background: var(--overlay-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-wrap .hamburger > div {
+        position: relative;
+        width: 100%;
+        height: .125rem;
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+
+    .menu-wrap .hamburger > div:before, 
+    .menu-wrap .hamburger > div:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: -0.65rem;
+        width: 100%;
+        height: 0.125rem;
+        background: inherit;
+    }
+
+    .menu-wrap .hamburger > div:after {
+        top: 0.65rem;
+    }
+
+    .menu-wrap .toggler:checked + .hamburger > div {
+        transform: rotate(135deg);
+    }
+
+    .menu-wrap .toggler:checked + .hamburger > div:before,
+    .menu-wrap .toggler:checked + .hamburger > div:after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    .menu-wrap .toggler:checked ~ .menu {
+        visibility: visible;
+    }
+
+    .menu-wrap .toggler:checked ~ .menu > div {
+        transition-duration: var(--menu-speed);
+    }
+
+    .menu-wrap .toggler:checked ~ .menu > div > div {
+        opacity: 1;
+        transition: opacity 200ms ease;
+    }
+
+    .menu-wrap .menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-wrap .menu > div {
+        background: var(--overlay-color);
+        width: 200vw;
+        height: 200vh;
+        display: flex;
+        flex: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-wrap .menu > div > div {
+        text-align: center;
+        max-width: 90vw;
+        max-height: 100vh;
+        opacity: 0;
+        transition: 200ms ease;
+    }
+
+    .menu-wrap .menu > div > div > ul > li {
+        list-style: none;
+        color: #ffffff;
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    .menu-wrap .menu > div > div > ul > li > a {
+        color: inherit;
+        text-decoration: none;
+        transition: 200ms ease;
+    }
+
+}
+
+/* Remove Portfolio from Header */
+
+@media only screen and (max-width: 619px) {
+    .header-subname {
+        display: none;
+    }
+}
+
+/* Contact Page Reorder */
+
+@media only screen and (max-width: 999px) {
+    .contact-form-container {
+        width: 100%;
+    }
+
+    .contact-img-container {
+        width: 100%;
+    }
 }
