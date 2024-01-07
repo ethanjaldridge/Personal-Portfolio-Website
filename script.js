@@ -58,6 +58,40 @@ const initSlider1 = () => {
         document.addEventListener("mousemove", handleMouseMove);
         document.addEventListener("mouseup", handleMouseUp);
     });
+
+    /* Swiping */
+
+    let isDragStart = false, prevPageX, prevScrollLeft;
+
+    const dragStart = (e) => {
+        isDragStart = true;
+        prevPageX = e.pageX || e.touches[0].pageX;
+        prevScrollLeft = imgList.scrollLeft;
+    }
+
+    const dragging = (e) => {
+        if (!isDragStart) return;
+        e.preventDefault();
+        imgList.classList.add("dragging");
+        let positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+        imgList.scrollLeft = prevScrollLeft - positionDiff;
+        showHideIcons();
+    }
+
+    const dragStop = () => {
+        isDragStart = false;
+        imgList.classList.remove("dragging");
+    }
+
+    imgList.addEventListener("mousedown", dragStart);
+    imgList.addEventListener("touchstart", dragStart);
+
+    imgList.addEventListener("mousemove", dragging);
+    imgList.addEventListener("touchmove", dragging);
+
+    imgList.addEventListener("mouseup", dragStop);
+    imgList.addEventListener("mouseleave", dragStop);
+    imgList.addEventListener("touchend", dragStop);
 };
 
 /* Music Video Slider */
@@ -173,6 +207,7 @@ const initSlider3 = () => {
     imgList.addEventListener("touchmove", dragging);
 
     imgList.addEventListener("mouseup", dragStop);
+    imgList.addEventListener("mouseleave", dragStop);
     imgList.addEventListener("touchend", dragStop);
 };
 
