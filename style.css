@@ -205,18 +205,21 @@ header {
     height: 21rem;
     width: 14rem;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .health-img-h {
     height: 14rem;
     width: 21rem;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .health-img-h-s {
     height: 10.5rem;
     width: 21rem;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .health-scrollbar {
@@ -396,7 +399,7 @@ header {
 }
 
 #art-prev-slide {
-    padding-right: 0.25rem;
+    padding-right: .25rem;
 }
 
 .art-slider-wrapper {
@@ -427,6 +430,10 @@ header {
 .art-img {
     height: 20rem;
     width: 15rem;
+}
+
+.art-img:hover {
+    cursor: pointer;
 }
 
 /* Footer */
