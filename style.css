@@ -894,22 +894,12 @@ header {
 
 @media only screen and (max-width: 560px) {
     .music-slider-wrapper {
+        height: 10rem;
         width: 18rem;
     }
 
     .music-vid-list {
         grid-template: 100% / repeat(8, 18rem);
-    }
-}
-
-@media only screen and (max-width: 425px) {
-    .music-slider-wrapper {
-        height: 10rem;
-        width: 15rem;
-    }
-
-    .music-vid-list {
-        grid-template: 100% / repeat(8, 15rem);
     }
 }
 
