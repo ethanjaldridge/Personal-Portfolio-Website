@@ -892,17 +892,6 @@ header {
     }
 }
 
-@media only screen and (max-width: 560px) {
-    .music-slider-wrapper {
-        height: 10rem;
-        width: 18rem;
-    }
-
-    .music-vid-list {
-        grid-template: 100% / repeat(8, 18rem);
-    }
-}
-
 @media only screen and (max-width: 1159px) {
     .art-slider-wrapper {
         width: 34rem;
